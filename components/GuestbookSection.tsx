@@ -30,7 +30,7 @@ export default function GuestbookSection() {
       .select('id, message, created_at, profiles(anonymous_number)')
       .order('created_at', { ascending: false })
       .limit(20)
-    if (data) setEntries(data as Entry[])
+    if (data) setEntries(data as unknown as Entry[])
   }
 
   async function handleSubmit(e: React.FormEvent) {
